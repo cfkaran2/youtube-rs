@@ -2,14 +2,14 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct GoogleErrorResponse {
-    pub error: GoogleError,
+    pub error: GoogleError
 }
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct GoogleError {
     code: u16,
     errors: Vec<ErrorItem>,
-    message: String,
+    message: String
 }
 
 impl std::fmt::Display for GoogleError {
@@ -24,5 +24,5 @@ impl std::error::Error for GoogleError {}
 pub struct ErrorItem {
     domain: String,
     message: String,
-    reason: String,
+    reason: String
 }

@@ -12,10 +12,8 @@ pub struct ListPlaylistsRequestBuilder {
 
 impl ListPlaylistsRequestBuilder {
     pub(crate) fn build(self) -> ListPlaylistsRequest {
-        ListPlaylistsRequest {
-            part: String::from("snippet"),
-            builder: self
-        }
+        ListPlaylistsRequest { part: String::from("snippet"),
+                               builder: self }
     }
 }
 
@@ -27,7 +25,6 @@ pub struct ListPlaylistsRequest {
     builder: ListPlaylistsRequestBuilder
 }
 
-
 #[derive(Debug, Clone, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ListPlaylistItemsRequestBuilder {
@@ -37,10 +34,9 @@ pub struct ListPlaylistItemsRequestBuilder {
 
 impl ListPlaylistItemsRequestBuilder {
     pub(crate) fn build(self) -> ListPlaylistItemsRequest {
-        ListPlaylistItemsRequest {
-            part: String::from("snippet,contentDetails"),
-            builder: self
-        }
+        ListPlaylistItemsRequest { part:
+                                       String::from("snippet,contentDetails"),
+                                   builder: self }
     }
 }
 

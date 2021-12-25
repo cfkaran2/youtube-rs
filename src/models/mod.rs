@@ -1,16 +1,12 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 mod error;
 mod metadata;
-mod search;
 mod playlists;
+mod search;
 mod snippet;
 
-pub use self::error::*;
-pub use self::metadata::*;
-pub use self::search::*;
-pub use self::playlists::*;
-pub use self::snippet::*;
+pub use self::{error::*, metadata::*, playlists::*, search::*, snippet::*};
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -28,7 +24,7 @@ pub struct Response<T> {
 #[serde(rename_all = "camelCase")]
 pub struct PageInfo {
     pub total_results: u64,
-    pub results_per_page: u64,
+    pub results_per_page: u64
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -48,7 +44,7 @@ pub enum Id {
     PlaylistId {
         #[serde(rename = "playlistId")]
         playlist_id: String
-    },
+    }
 }
 
 impl Id {
@@ -56,7 +52,7 @@ impl Id {
         match self {
             Id::VideoId { video_id } => video_id,
             Id::ChannelId { channel_id } => channel_id,
-            Id::PlaylistId { playlist_id } => playlist_id,
+            Id::PlaylistId { playlist_id } => playlist_id
         }
     }
 }

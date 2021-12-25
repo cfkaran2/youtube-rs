@@ -8,12 +8,10 @@ pub struct SearchRequestBuilder {
 
 impl SearchRequestBuilder {
     pub(crate) fn build<S: Into<String>>(self, api_key: S) -> SearchRequest {
-        SearchRequest {
-            part: String::from("snippet"),
-            key: api_key.into(),
-            query: self.query,
-            channel_id: self.channel_id
-        }
+        SearchRequest { part: String::from("snippet"),
+                        key: api_key.into(),
+                        query: self.query,
+                        channel_id: self.channel_id }
     }
 }
 

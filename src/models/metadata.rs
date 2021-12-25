@@ -22,13 +22,14 @@ pub struct VideoMetadata {
     pub attestation: Option<Attestation>,
     #[serde(default)]
     pub messages: Vec<Message>,
-    pub endscreen: Option<Endscreen>,
+    pub endscreen: Option<Endscreen>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Annotation {
-    pub player_annotations_expanded_renderer: Option<PlayerAnnotationsExpandedRenderer>,
+    pub player_annotations_expanded_renderer:
+        Option<PlayerAnnotationsExpandedRenderer>
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -36,7 +37,7 @@ pub struct Annotation {
 pub struct PlayerAnnotationsExpandedRenderer {
     pub featured_channel: FeaturedChannel,
     pub allow_swipe_dismiss: bool,
-    pub annotation_id: String,
+    pub annotation_id: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -48,26 +49,26 @@ pub struct FeaturedChannel {
     pub tracking_params: String,
     pub navigation_endpoint: FeaturedChannelNavigationEndpoint,
     pub channel_name: String,
-    pub subscribe_button: SubscribeButtonClass,
+    pub subscribe_button: SubscribeButtonClass
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct FeaturedChannelNavigationEndpoint {
     pub click_tracking_params: String,
-    pub browse_endpoint: BrowseEndpoint,
+    pub browse_endpoint: BrowseEndpoint
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct BrowseEndpoint {
-    pub browse_id: String,
+    pub browse_id: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SubscribeButtonClass {
-    pub subscribe_button_renderer: SubscribeButtonRenderer,
+    pub subscribe_button_renderer: SubscribeButtonRenderer
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -85,17 +86,17 @@ pub struct SubscribeButtonRenderer {
     pub tracking_params: String,
     pub unsubscribe_button_text: MessageTitle,
     pub service_endpoints: Vec<ServiceEndpoint>,
-    pub sign_in_endpoint: Option<SigninEndpoint>,
+    pub sign_in_endpoint: Option<SigninEndpoint>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct MessageTitle {
-    pub runs: Vec<Run>,
+    pub runs: Vec<Run>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct Run {
-    pub text: String,
+    pub text: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -103,64 +104,64 @@ pub struct Run {
 pub struct ServiceEndpoint {
     pub click_tracking_params: String,
     pub subscribe_endpoint: Option<SubscribeEndpoint>,
-    pub unsubscribe_endpoint: Option<SubscribeEndpoint>,
+    pub unsubscribe_endpoint: Option<SubscribeEndpoint>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SubscribeEndpoint {
     pub channel_ids: Vec<String>,
-    pub params: String,
+    pub params: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SigninEndpoint {
     pub click_tracking_params: String,
-    pub web_navigation_endpoint_data: Option<WebNavigationEndpointData>,
+    pub web_navigation_endpoint_data: Option<WebNavigationEndpointData>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct WebNavigationEndpointData {
-    pub url: String,
+    pub url: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct WatermarkClass {
-    pub thumbnails: Vec<ThumbnailElement>,
+    pub thumbnails: Vec<ThumbnailElement>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct ThumbnailElement {
     pub url: String,
     pub width: i64,
-    pub height: i64,
+    pub height: i64
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Attestation {
-    pub player_attestation_renderer: PlayerAttestationRenderer,
+    pub player_attestation_renderer: PlayerAttestationRenderer
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayerAttestationRenderer {
     pub challenge: String,
-    pub botguard_data: BotguardData,
+    pub botguard_data: BotguardData
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct BotguardData {
     pub program: String,
-    pub interpreter_url: String,
+    pub interpreter_url: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Endscreen {
-    pub endscreen_renderer: EndscreenRenderer,
+    pub endscreen_renderer: EndscreenRenderer
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -168,13 +169,13 @@ pub struct Endscreen {
 pub struct EndscreenRenderer {
     pub elements: Vec<Element>,
     pub start_ms: String,
-    pub tracking_params: String,
+    pub tracking_params: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Element {
-    pub endscreen_element_renderer: EndscreenElementRenderer,
+    pub endscreen_element_renderer: EndscreenElementRenderer
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -201,7 +202,7 @@ pub struct EndscreenElementRenderer {
     pub use_classic_subscribe_button: Option<bool>,
     pub id: String,
     pub video_duration: Option<Description>,
-    pub playlist_length: Option<Description>,
+    pub playlist_length: Option<Description>
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -216,7 +217,7 @@ pub enum EndcardStyle {
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Description {
-    pub simple_text: String,
+    pub simple_text: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -224,43 +225,43 @@ pub struct Description {
 pub struct Endpoint {
     pub click_tracking_params: String,
     pub browse_endpoint: Option<BrowseEndpoint>,
-    pub watch_endpoint: Option<WatchEndpoint>,
+    pub watch_endpoint: Option<WatchEndpoint>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct WatchEndpoint {
     pub video_id: String,
-    pub playlist_id: Option<String>,
+    pub playlist_id: Option<String>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct Icon {
-    pub thumbnails: Vec<WebNavigationEndpointData>,
+    pub thumbnails: Vec<WebNavigationEndpointData>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Title {
     pub accessibility: Accessibility,
-    pub simple_text: String,
+    pub simple_text: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Accessibility {
-    pub accessibility_data: AccessibilityData,
+    pub accessibility_data: AccessibilityData
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct AccessibilityData {
-    pub label: String,
+    pub label: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Message {
-    pub mealbar_promo_renderer: Option<MealbarPromoRenderer>,
+    pub mealbar_promo_renderer: Option<MealbarPromoRenderer>
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -274,13 +275,13 @@ pub struct MealbarPromoRenderer {
     pub tracking_params: String,
     pub impression_endpoints: Vec<ImpressionEndpointElement>,
     pub is_visible: bool,
-    pub message_title: MessageTitle,
+    pub message_title: MessageTitle
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ActionButtonClass {
-    pub button_renderer: ButtonRenderer,
+    pub button_renderer: ButtonRenderer
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -291,46 +292,46 @@ pub struct ButtonRenderer {
     pub text: MessageTitle,
     pub service_endpoint: ImpressionEndpointElement,
     pub navigation_endpoint: Option<ButtonRendererNavigationEndpoint>,
-    pub tracking_params: String,
+    pub tracking_params: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ButtonRendererNavigationEndpoint {
     pub click_tracking_params: String,
-    pub url_endpoint: Option<UrlEndpoint>,
+    pub url_endpoint: Option<UrlEndpoint>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct UrlEndpoint {
     pub url: String,
-    pub target: String,
+    pub target: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ImpressionEndpointElement {
     pub click_tracking_params: String,
-    pub feedback_endpoint: FeedbackEndpoint,
+    pub feedback_endpoint: FeedbackEndpoint
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct FeedbackEndpoint {
     pub feedback_token: String,
-    pub ui_actions: UiActions,
+    pub ui_actions: UiActions
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct UiActions {
-    pub hide_enclosing_container: bool,
+    pub hide_enclosing_container: bool
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Microformat {
-    pub player_microformat_renderer: PlayerMicroformatRenderer,
+    pub player_microformat_renderer: PlayerMicroformatRenderer
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -350,7 +351,7 @@ pub struct PlayerMicroformatRenderer {
     pub category: String,
     pub publish_date: String,
     pub owner_channel_name: String,
-    pub upload_date: String,
+    pub upload_date: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -360,7 +361,7 @@ pub struct Embed {
     pub flash_url: String,
     pub width: i64,
     pub height: i64,
-    pub flash_secure_url: String,
+    pub flash_secure_url: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -369,7 +370,7 @@ pub struct PlayabilityStatus {
     pub status: PlaybackStatus,
     #[serde(default)]
     pub playable_in_embed: bool,
-    pub context_params: String,
+    pub context_params: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -390,20 +391,20 @@ pub struct PlaybackTracking {
     pub set_awesome_url: AtrUrlClass,
     pub atr_url: AtrUrlClass,
     pub youtube_remarketing_url: Option<AtrUrlClass>,
-    pub google_remarketing_url: Option<AtrUrlClass>,
+    pub google_remarketing_url: Option<AtrUrlClass>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AtrUrlClass {
     pub base_url: String,
-    pub elapsed_media_time_seconds: i64,
+    pub elapsed_media_time_seconds: i64
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct PtrackingUrlClass {
-    pub base_url: String,
+    pub base_url: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -412,7 +413,7 @@ pub struct PlayerConfig {
     pub audio_config: AudioConfig,
     pub stream_selection_config: Option<StreamSelectionConfig>,
     pub media_common_config: MediaCommonConfig,
-    pub web_player_config: WebPlayerConfig,
+    pub web_player_config: WebPlayerConfig
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -420,13 +421,13 @@ pub struct PlayerConfig {
 pub struct AudioConfig {
     pub loudness_db: Option<f64>,
     pub perceptual_loudness_db: Option<f64>,
-    pub enable_per_format_loudness: bool,
+    pub enable_per_format_loudness: bool
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct MediaCommonConfig {
-    pub dynamic_readahead_config: DynamicReadaheadConfig,
+    pub dynamic_readahead_config: DynamicReadaheadConfig
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -434,19 +435,19 @@ pub struct MediaCommonConfig {
 pub struct DynamicReadaheadConfig {
     pub max_read_ahead_media_time_ms: i64,
     pub min_read_ahead_media_time_ms: i64,
-    pub read_ahead_growth_rate_ms: i64,
+    pub read_ahead_growth_rate_ms: i64
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct StreamSelectionConfig {
-    pub max_bitrate: String,
+    pub max_bitrate: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct WebPlayerConfig {
-    pub web_player_actions_porting: WebPlayerActionsPorting,
+    pub web_player_actions_porting: WebPlayerActionsPorting
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -456,105 +457,106 @@ pub struct WebPlayerActionsPorting {
     pub subscribe_command: SubscribeCommand,
     pub unsubscribe_command: UnsubscribeCommand,
     pub add_to_watch_later_command: AddToWatchLaterCommand,
-    pub remove_from_watch_later_command: RemoveFromWatchLaterCommand,
+    pub remove_from_watch_later_command: RemoveFromWatchLaterCommand
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AddToWatchLaterCommand {
     pub click_tracking_params: String,
-    pub playlist_edit_endpoint: AddToWatchLaterCommandPlaylistEditEndpoint,
+    pub playlist_edit_endpoint: AddToWatchLaterCommandPlaylistEditEndpoint
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AddToWatchLaterCommandPlaylistEditEndpoint {
     pub playlist_id: String,
-    pub actions: Vec<PurpleAction>,
+    pub actions: Vec<PurpleAction>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct PurpleAction {
     pub added_video_id: String,
-    pub action: String,
+    pub action: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct GetSharePanelCommand {
     pub click_tracking_params: String,
-    pub web_player_share_entity_service_endpoint: WebPlayerShareEntityServiceEndpoint,
+    pub web_player_share_entity_service_endpoint:
+        WebPlayerShareEntityServiceEndpoint
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct WebPlayerShareEntityServiceEndpoint {
-    pub serialized_share_entity: String,
+    pub serialized_share_entity: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct RemoveFromWatchLaterCommand {
     pub click_tracking_params: String,
-    pub playlist_edit_endpoint: RemoveFromWatchLaterCommandPlaylistEditEndpoint,
+    pub playlist_edit_endpoint: RemoveFromWatchLaterCommandPlaylistEditEndpoint
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct RemoveFromWatchLaterCommandPlaylistEditEndpoint {
     pub playlist_id: String,
-    pub actions: Vec<FluffyAction>,
+    pub actions: Vec<FluffyAction>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct FluffyAction {
     pub action: String,
-    pub removed_video_id: String,
+    pub removed_video_id: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SubscribeCommand {
     pub click_tracking_params: String,
-    pub subscribe_endpoint: SubscribeEndpoint,
+    pub subscribe_endpoint: SubscribeEndpoint
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct UnsubscribeCommand {
     pub click_tracking_params: String,
-    pub unsubscribe_endpoint: SubscribeEndpoint,
+    pub unsubscribe_endpoint: SubscribeEndpoint
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ResponseContext {
-    pub service_tracking_params: Vec<ServiceTrackingParam>,
+    pub service_tracking_params: Vec<ServiceTrackingParam>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct ServiceTrackingParam {
     pub service: String,
-    pub params: Vec<Param>,
+    pub params: Vec<Param>
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct Param {
     pub key: String,
-    pub value: String,
+    pub value: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Storyboards {
-    pub player_storyboard_spec_renderer: PlayerStoryboardSpecRenderer,
+    pub player_storyboard_spec_renderer: PlayerStoryboardSpecRenderer
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct PlayerStoryboardSpecRenderer {
-    pub spec: String,
+    pub spec: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -563,7 +565,7 @@ pub struct StreamingData {
     pub expires_in_seconds: String,
     pub formats: Vec<Format>,
     pub adaptive_formats: Vec<Format>,
-    pub probe_url: Option<String>,
+    pub probe_url: Option<String>
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -589,7 +591,7 @@ pub struct Format {
     pub high_replication: Option<bool>,
     pub audio_quality: Option<String>,
     pub audio_sample_rate: Option<String>,
-    pub audio_channels: Option<i64>,
+    pub audio_channels: Option<i64>
 }
 
 #[derive(Debug, Clone, Deserialize, PartialEq, Eq, PartialOrd, Ord)]
@@ -613,13 +615,13 @@ pub enum AudioQuality {
 pub struct ColorInfo {
     pub primaries: String,
     pub transfer_characteristics: String,
-    pub matrix_coefficients: String,
+    pub matrix_coefficients: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct Range {
     pub start: String,
-    pub end: String,
+    pub end: String
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -641,11 +643,11 @@ pub struct VideoDetails {
     pub author: String,
     pub is_private: bool,
     pub is_unplugged_corpus: bool,
-    pub is_live_content: bool,
+    pub is_live_content: bool
 }
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "UPPERCASE")]
 pub enum ProjectionType {
-    Rectangular,
+    Rectangular
 }

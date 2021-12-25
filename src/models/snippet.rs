@@ -18,5 +18,5 @@ pub struct Snippet {
 pub struct Thumbnail {
     pub url: String,
     pub width: Option<u64>,
-    pub height: Option<u64>,
+    pub height: Option<u64>
 }

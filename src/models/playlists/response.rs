@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{Response, Snippet, Id};
+use crate::models::{Id, Response, Snippet};
 
 pub type ListPlaylistsResponse = Response<PlaylistResource>;
 pub type ListPlaylistItemsResponse = Response<PlaylistItemResource>;

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{Response, Snippet, Id};
+use crate::models::{Id, Response, Snippet};
 
 pub type SearchResponse = Response<SearchResult>;
 
@@ -9,6 +9,5 @@ pub struct SearchResult {
     pub kind: String,
     pub etag: String,
     pub id: Id,
-    pub snippet: Snippet,
+    pub snippet: Snippet
 }
-
