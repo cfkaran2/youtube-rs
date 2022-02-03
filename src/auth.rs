@@ -1,3 +1,5 @@
+//! TODO: Add documentation
+
 use std::io;
 
 use failure::Error;

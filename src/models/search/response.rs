@@ -1,3 +1,5 @@
+//! TODO: Add documentation
+
 use serde::{Deserialize, Serialize};
 
 use crate::models::{Id, Response, Snippet};

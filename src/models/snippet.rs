@@ -1,3 +1,5 @@
+//! TODO: Add documentation
+
 use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};

@@ -1,3 +1,5 @@
+//! TODO: Add documentation
+
 use serde::Serialize;
 
 #[derive(Debug, Clone, Serialize, Default)]

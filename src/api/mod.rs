@@ -1,3 +1,5 @@
+//! TODO: Add documentation
+
 use failure::Error;
 use oauth2::basic::BasicClient;
 use reqwest::{get, Client, RequestBuilder, StatusCode};

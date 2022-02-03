@@ -1,3 +1,5 @@
+//! TODO: Add documentation
+
 use failure::{ensure, format_err, Error};
 use oauth2::{
     basic::BasicClient,

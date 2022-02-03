@@ -1,3 +1,5 @@
+//! TODO: Add documentation
+
 use serde::Deserialize;
 
 #[derive(Debug, Clone, Deserialize)]

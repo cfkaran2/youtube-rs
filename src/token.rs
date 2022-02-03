@@ -1,3 +1,5 @@
+//! TODO: Add documentation
+
 use std::{
     sync::{
         atomic::{AtomicBool, Ordering},
